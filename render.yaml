@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: coatwise-paint-advisor
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4.1-mini
+      - key: SIGNING_SECRET
+        generateValue: true
+      - key: ADMIN_TOKEN
+        generateValue: true
+# WEATHER_API_KEY can be added as a server secret when commercial licensed use is approved.
+# Free plan files are ephemeral; configure paid persistent storage if durable events are needed.

@@ -1,0 +1,18 @@
+COATWISE v10 — CHANGED FILES ONLY
+
+Replace these six files in your existing Coatwise v9 project; keep the exact nested folder structure.
+Your .env and OPENAI_API_KEY are NOT included or changed.
+
+1. Extract this ZIP into the root of your existing Coatwise folder.
+2. Approve Replace when your Mac prompts (or copy the folders with merged contents).
+3. Restart the server:
+   npm test
+   npm start
+4. In the existing job assessment chat ask:
+   Find the official StoColor Dryonic datasheet and check it against this job's weather.
+   Expected: manufacturer sources + concise weather verdict if enough verified rules can be extracted.
+   If a source cannot be opened or its temperature limits cannot be verified, the app must ask for the official sheet rather than invent a result.
+5. Click "New chat" (new labelled button) to clear only the conversation. Your form inputs and saved assessment history remain.
+
+Needs an internet-connected Mac/server, valid OpenAI key with web-search permissions, and Poppler (pdftotext) for manufacturer PDF downloads. Install on Mac with: brew install poppler
+The tested automated fixtures are not live manufacturer or OpenAI calls. Web search uses OpenAI API calls and may incur extra cost.

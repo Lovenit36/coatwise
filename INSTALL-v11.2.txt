@@ -1,0 +1,35 @@
+COATWISE v11.2 — PATCH FOR YOUR EXISTING WORKING v11.1 PROJECT
+
+INSTALL ON MAC
+1. Stop the running server with Control+C.
+2. In Terminal, change into your existing project folder:
+   cd /Users/apple/Desktop/plancraft/coatwise-paint-advisor-v3
+3. Unzip this ZIP into the CURRENT project folder, not a separate subfolder:
+   unzip -o ~/Downloads/Coatwise-v11.2-CHANGED-FILES-ONLY.zip
+   (If Safari changed the download path, drag the ZIP into Terminal after typing unzip -o.)
+4. Run:
+   npm test
+   npm start
+5. Reload http://localhost:3000 with Cmd+Option+R.
+
+IMPORTANT: This patch requires v11.1/repair version already installed (the previous
+Coatwise-v11.1-FIX-EXISTING-PROJECT.zip, including src/knowledge.mjs).
+It does NOT include or overwrite your .env, saved jobs, knowledge cache, or API key.
+
+WHAT CHANGED
+- Desktop chat area and project form scroll independently. Chat composer stays in place.
+- Mobile chat gets its own viewport-height scrollable panel.
+- Itinerary answer short and structured. No long listing of blocked application attempts.
+- Click 'View weather & verdict by date' to inspect each day's forecast and reason.
+- An explicitly selected different catalogue paint is used for the NEW plan;
+  the old signed job assessment does not silently change.
+- One coat is the planning default. Never assume a second coat is required from unknown specs.
+- Optional wall dimensions; gross area calculation; no invented paint coverage.
+- Follow-up dimensions regenerate the plan with the previous selected paint after verification.
+- Added regression tests.
+
+SAFETY / LIMITATIONS
+Weather screening is not manufacturer authorization. Where the exact required
+number of coats, primer, drying or coverage is not verified, the app says so.
+A false approval or promised curing time is not generated from incomplete evidence.
+AI and live manufacturer retrieval require your own working server API config.

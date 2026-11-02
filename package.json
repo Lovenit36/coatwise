@@ -1,0 +1,16 @@
+{
+  "name": "paint-weather-advisor",
+  "version": "2.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "dev": "node --env-file-if-exists=.env --watch server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "smoke": "node --env-file-if-exists=.env scripts/smoke-live.mjs"
+  },
+  "description": "Evidence-grounded exterior paint and weather advisor. Zero npm runtime dependencies."
+}

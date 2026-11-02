@@ -1,0 +1,29 @@
+COATWISE v9 — AUTOMATIC MANUFACTURER WEB RESEARCH
+================================================
+
+Contains ONLY the modified/new files. No .env, API key, or entire repository.
+
+1. Extract this ZIP.
+2. Copy all included files/folders into your existing Coatwise project folder.
+   When prompted, replace the matching files; new src/web-research.mjs and
+   tests/v9-web-research.test.mjs will be added.
+3. Keep your existing .env unchanged. OPENAI_MODEL=gpt-6.1-sol is supported.
+4. Run:
+     npm test
+     npm start
+5. Open http://localhost:3000 and type in chat:
+     Search the official technical datasheet for StoColor Dryonic.
+   This works BEFORE and AFTER a completed paint/weather assessment.
+
+What was added:
+- Live Responses API + web_search for unknown paint research.
+- Readable chat answer and clickable links to cited manufacturer pages.
+- If no manufacturer source found, explicit failure instead of fake specs.
+- No need for a separate internet-search API key, only OPENAI_API_KEY.
+
+Important:
+- Web research findings are not automatically approved datasheet facts.
+- To run an actual weather suitability decision for the new paint, use the
+  official datasheet upload/verification flow. No changes to that existing flow.
+- OpenAI web searches cost extra. This environment tested the request/response
+  integration with mock API replies; real live calls need testing on your Mac.

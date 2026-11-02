@@ -1,0 +1,17 @@
+Coatwise v6 - Changed-files-only patch for installed v5
+
+1. Open the EXISTING Coatwise v5 project folder (the one containing package.json).
+2. Extract this ZIP IN that folder, preserving public/, src/, and tests/ structure. Replace matching files.
+3. Do not change your existing .env.
+4. Run: npm test
+5. Restart the app: npm start
+6. Safari: use Cmd+Shift+R for a hard refresh if old chat responses remain cached.
+
+What changed:
+- GPT-6.1 Sol handles normal follow-up questions, informed by recent chat, instead of canned keyword responses.
+- AI may suggest a specific catalogue paint check or new datasheet upload action.
+- 'Check another paint datasheet' opens a guided upload -> extraction -> human review -> live comparison dialog.
+- A reviewed upload remains usable for rechecking another date.
+- Frontend JS/CSS use no-cache headers to ease patch testing.
+
+Important: Synthetic browser-test weather and AI responses are NOT included. Real OpenAI and Open-Meteo requests still need testing on your Mac.
